@@ -1,0 +1,8 @@
+{
+ "slug": "000-demo",
+ "title": "",
+ "voice": { "provider": "elevenlabs", "voice_id": "", "model": "eleven_v3" },
+ "character": "a young adult with short dark hair, a teal hoodie, dark trousers and white sneakers, a simple friendly face with minimal features",
+ "breaths": { "2": 0.9, "3": 0.8, "6": 0.8 },
+ "music": []
+}

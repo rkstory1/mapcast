@@ -1,0 +1,6 @@
+# spoken words = how the caption writes them (srt.py). Longest phrases win.
+nineteen eighties = 1980s
+twenty five minutes = 25 minutes
+twenty five = 25
+five minute = 5-minute
+fifteen to thirty minutes = 15 to 30 minutes

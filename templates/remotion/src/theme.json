@@ -1,0 +1,8 @@
+{
+  "channel": "Your Channel",
+  "tagline": "New videos every week.",
+  "watermark": "",
+  "preset": "sunny",
+  "c": { "sun": "#FFD93B", "ink": "#2B2D6E", "hot": "#FF6B5A", "cool": "#19C3B1", "canvas": "#F7F6F2", "white": "#FFFFFF", "mute": "#9A9CB3", "dot": "#DDDCE6" },
+  "font": "Geist"
+}
