@@ -1,0 +1,184 @@
+{
+ "slug": "000-showcase",
+ "title": "Parkinson's Law in 30 seconds",
+ "voice": {
+  "provider": "elevenlabs",
+  "voice_id": "",
+  "model": "eleven_v4"
+ },
+ "breaths": {
+  "1": 0.7,
+  "2": 0.8
+ },
+ "music": [
+  {
+   "file": "music/track.wav",
+   "from": 1
+  }
+ ],
+ "music_lufs": -26.5,
+ "sfx": [
+  {
+   "file": "sfx/pop.wav",
+   "at": 0.12,
+   "peak": -16
+  },
+  {
+   "file": "sfx/pop.wav",
+   "at": "1:ten",
+   "off": -0.05,
+   "peak": -18
+  },
+  {
+   "file": "sfx/tick.wav",
+   "at": "1:swallow",
+   "peak": -15,
+   "len": 1.4
+  },
+  {
+   "file": "sfx/pop.wav",
+   "at": "1:afternoon",
+   "peak": -17
+  },
+  {
+   "file": "sfx/flyby.wav",
+   "at": "1:in",
+   "off": -0.4,
+   "peak": -12
+  },
+  {
+   "file": "sfx/pop.wav",
+   "at": "1:british",
+   "peak": -18
+  },
+  {
+   "file": "sfx/whoosh.wav",
+   "at": "1:put",
+   "peak": -20
+  },
+  {
+   "file": "sfx/flyby.wav",
+   "at": "1:in@7.5",
+   "off": -0.4,
+   "peak": -12
+  },
+  {
+   "file": "sfx/stamp.wav",
+   "at": "1:half",
+   "off": -0.02,
+   "peak": -8
+  },
+  {
+   "file": "sfx/flyby.wav",
+   "at": "2:work",
+   "off": -0.44,
+   "peak": -12
+  },
+  {
+   "file": "sfx/clink.wav",
+   "at": "2:work",
+   "off": 0.18,
+   "peak": -20
+  },
+  {
+   "file": "sfx/clink.wav",
+   "at": "2:work",
+   "off": 0.32,
+   "peak": -21
+  },
+  {
+   "file": "sfx/clink.wav",
+   "at": "2:work",
+   "off": 0.46,
+   "peak": -20
+  },
+  {
+   "file": "sfx/clink.wav",
+   "at": "2:work",
+   "off": 0.6,
+   "peak": -22
+  },
+  {
+   "file": "sfx/clink.wav",
+   "at": "2:work",
+   "off": 0.74,
+   "peak": -21
+  },
+  {
+   "file": "sfx/squeeze.wav",
+   "at": "2:expands",
+   "off": 0.05,
+   "peak": -18
+  },
+  {
+   "file": "sfx/whoosh.wav",
+   "at": "2:today",
+   "off": -0.1,
+   "peak": -16
+  },
+  {
+   "file": "sfx/stamp.wav",
+   "at": "2:parkinson's",
+   "off": 0.05,
+   "peak": -8
+  },
+  {
+   "file": "sfx/flyby.wav",
+   "at": "3:so",
+   "off": -0.15,
+   "peak": -12
+  },
+  {
+   "file": "sfx/squeeze.wav",
+   "at": "3:less",
+   "off": 0.02,
+   "peak": -15
+  },
+  {
+   "file": "sfx/whoosh.wav",
+   "at": "3:set",
+   "off": -0.24,
+   "peak": -14
+  },
+  {
+   "file": "sfx/pop.wav",
+   "at": "3:deadline",
+   "peak": -17
+  },
+  {
+   "file": "sfx/squeeze.wav",
+   "at": "3:too",
+   "peak": -17
+  },
+  {
+   "file": "sfx/tick.wav",
+   "at": "3:short",
+   "peak": -17,
+   "len": 0.9
+  },
+  {
+   "file": "sfx/whoosh.wav",
+   "at": "3:and",
+   "off": -0.2,
+   "peak": -15
+  },
+  {
+   "file": "sfx/pop.wav",
+   "at": "3:fit",
+   "off": -0.05,
+   "peak": -14
+  },
+  {
+   "file": "sfx/flyby.wav",
+   "at": "3:fit",
+   "off": 0.45,
+   "peak": -14
+  },
+  {
+   "file": "sfx/pop.wav",
+   "at": "3:fit",
+   "off": 0.85,
+   "peak": -18
+  }
+ ]
+}

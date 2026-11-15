@@ -4,6 +4,7 @@
 #   setup.sh install          installs what is missing: Node, ffmpeg, Python packages, Remotion and its browser
 #   setup.sh new 001-my-topic  a new video folder in the workspace, ready to work in
 #   setup.sh demo             a demo video folder, rendered as stills on an estimated timeline (proves the install works)
+#   setup.sh showcase         the 30 s showcase (motion.tsx: map camera, flip, whip, iris) as a project, with a contact sheet
 # Shared installs live in ~/.mapcast (Python venv and Remotion node_modules, installed once for every video).
 # Video folders live in $MAPCAST_HOME (default ~/mapcast-videos).
 set -e
@@ -106,7 +107,21 @@ demo() {
   echo "demo ready: $D (contact sheet in remotion/out/demo/sheet-01.jpg)"
 }
 
+showcase() {
+  D=$(new "${1:-000-showcase}" | tail -1); E="$SKILL/examples/showcase"
+  cp "$SKILL"/assets/starter-art/*.svg "$D/remotion/public/art/"
+  cp "$E/Showcase.tsx" "$E/Root.tsx" "$E/timeline.json" "$D/remotion/src/"
+  cp "$E/script.md" "$E/brief.md" "$E/project.json" "$D/"; mkdir -p "$D/sfx"
+  "$VENV/bin/python" - "$D" <<'PY'
+import json, sys
+d = sys.argv[1]; p = json.load(open(f'{d}/project.json')); p['slug'] = d.rstrip('/').split('/')[-1]; json.dump(p, open(f'{d}/project.json', 'w'), indent=1)
+PY
+  cd "$D/remotion" && node stills.mjs Video 0.5 out/showcase 0.5 2 3.5 4.4 6 7.5 9.5 12 14.5 16.4 17.5 19.1 20 21.5 23 24.6 25.9 28 >/dev/null
+  cd .. && bash sheet.sh remotion/out/showcase
+  echo "showcase ready: $D (contact sheet in remotion/out/showcase/sheet-01.jpg; to finish it: $E/README.md)"
+}
+
 case "$1" in
-  check) check ;; install) install ;; new) new "$2" ;; demo) demo "$2" ;;
-  *) echo "usage: setup.sh check | install | new 001-topic | demo"; exit 1 ;;
+  check) check ;; install) install ;; new) new "$2" ;; demo) demo "$2" ;; showcase) showcase "$2" ;;
+  *) echo "usage: setup.sh check | install | new 001-topic | demo | showcase"; exit 1 ;;
 esac

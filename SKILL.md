@@ -56,6 +56,8 @@ Paths: `SKILL` = this skill's folder (where this file is). Video folders live in
 3. Prove it works: `bash SKILL/scripts/setup.sh demo` builds a 2-minute demo video (the Pomodoro Technique, starter
    drawings, estimated timing, no voice needed) and renders a contact sheet of stills. Show the user
    `remotion/out/demo/sheet-01.jpg` from the demo folder. This is also the best way to show what the style looks like.
+   For the high-polish end of the style, `bash SKILL/scripts/setup.sh showcase` builds the 30 s showcase (map camera,
+   3D flip, whip, iris; `references/motion.md`) and renders its contact sheet.
 
 ## Step 1. Channel profile (first video on a channel)
 
@@ -156,6 +158,8 @@ cd remotion && node stills.mjs Video 0.5 out/s2 $(seq 0 2 900) && cd .. && bash 
 Read every contact sheet. Fix: empty frames, text over drawings, text running off a card, a drawing cut at the edge,
 a beat that shows only a title for more than 2 s. You can also preview live: `cd remotion && npx remotion studio`.
 Before the voice exists you can build on `./py est-timeline.py` (estimated timing); run timeline.py when the voice is in.
+For a short, high-polish piece (intro, trailer, Short, teaser) read `references/motion.md` and build a hand-made edit
+with `motion.tsx` instead of beats.ts: a camera over a map of scene cards, 3D flip, whip, iris, push.
 
 ## Step 7. Music and mix (gate)
 
@@ -167,6 +171,8 @@ Claude has it). Save them in `music/`.
 ```
 Add them to project.json `music` with the part each one starts at (change music at section breaths), then
 `./py mix.py` and `./py gap.py` (target: the voice about 20 dB above the music while talking). -14 LUFS master.
+Sound effects (optional, strong in short pieces): list them in project.json `sfx` on cue words, then `./py sfx.py`
+(it re-masters out/mix.wav to -14 LUFS). Details in `references/sound.md`.
 
 ## Step 8. Render
 
@@ -205,7 +211,8 @@ phone copy, the thumbnail sheet and upload.md. The user watches, picks the thumb
 
 | File | Does |
 |---|---|
-| `scripts/setup.sh` | `check`, `install`, `new NNN-topic`, `demo` |
+| `scripts/setup.sh` | `check`, `install`, `new NNN-topic`, `demo`, `showcase` |
+| `scripts/sfx.py` | sound effects on cue words (project.json `sfx`), on top of mix.py |
 | `scripts/ytsearch.py` | YouTube search results with views, age and length (no API key); THUMBS= saves thumbnails |
 | `scripts/script2tts.py` | script.md to voice/voice-tts.json, with words, length and credits |
 | `scripts/tts.py` | ElevenLabs voice by API, one file per part (key from the environment only) |
@@ -216,9 +223,10 @@ phone copy, the thumbnail sheet and upload.md. The user watches, picks the thumb
 | `scripts/checkcues.py`, `sheet.sh` | cue check; contact sheets of stills |
 | `scripts/voiceband.py`, `mix.py`, `gap.py` | music check; the -14 LUFS ducked mix; voice-to-music gap |
 | `scripts/srt.py`, `flicker.py`, `finish.sh` | captions; one-frame flash check; final files |
-| `templates/remotion/` | the kit: `kit.tsx` primitives, `scenes.tsx` scene kinds, `Video.tsx`, `beats.ts` (demo), `Thumb.tsx`, `theme.json`, render/stills/thumbs scripts |
+| `templates/remotion/` | the kit: `kit.tsx` primitives, `scenes.tsx` scene kinds, `motion.tsx` (map camera and cuts), `Video.tsx`, `beats.ts` (demo), `Thumb.tsx`, `theme.json`, render/stills/thumbs scripts |
 | `templates/project/` | per-video files: script.md (demo), brief.md, art.md, project.json, numbers.txt, upload.md |
-| `assets/starter-art/` | 14 drawings for the demo only; make new ones for real videos |
-| `references/` | research, script, art, beats, sound, channel profile and palettes, lessons |
+| `assets/starter-art/` | 18 drawings for the demo and showcase only; make new ones for real videos |
+| `examples/showcase/` | the 30 s showcase: Showcase.tsx, its timeline, script, facts and sound effect list |
+| `references/` | research, script, art, beats, motion, sound, channel profile and palettes, lessons |
 
 Read `references/lessons.md` before the first render: every mistake already made with this pipeline, so it is not repeated.

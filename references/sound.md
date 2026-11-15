@@ -26,3 +26,16 @@ section breath (a longer pause set in `breaths`).
 - `./py gap.py`: the voice should be about 18 to 22 dB above the music while talking. Measure, then listen on
   headphones. A mix where the music came up 4 dB OVER the voice in the pauses was the most common complaint;
   -28 LUFS with ratio 5 fixed it.
+
+## Sound effects (sfx.py)
+Run after mix.py. Each effect in project.json `sfx` sits on a cue word, like `cue()` in the edit:
+```
+"sfx": [ { "file": "sfx/whoosh.wav", "at": "1:in", "off": -0.4, "peak": -12 },
+         { "file": "sfx/tick.wav", "at": "1:swallow", "peak": -15, "len": 1.4 },
+         { "file": "sfx/pop.wav", "at": 0.12, "peak": -16 } ]
+```
+`at` is `part:first words` (add `@seconds` to take the first match after that time) or seconds; `off` shifts it
+(a whoosh starts about 0.3 to 0.45 s before the cut it carries); `peak` is the effect's peak in dBFS before the
+master (whooshes -12 to -16, pops -14 to -18, small clinks -20, a stamp -8 because it is quiet and low); `len` trims
+a long loop with a short fade. sfx.py re-masters out/mix.wav to -14 LUFS. Only effects the user has the rights to
+(Epidemic Sound, Artlist, or free libraries with a licence that allows YouTube).

@@ -26,6 +26,7 @@ or by hand:
 git clone https://github.com/rkstory1/mapcast.git ~/.claude/skills/mapcast
 bash ~/.claude/skills/mapcast/scripts/setup.sh install
 bash ~/.claude/skills/mapcast/scripts/setup.sh demo
+bash ~/.claude/skills/mapcast/scripts/setup.sh showcase   # the 30 s showcase: map camera, 3D flip, whip, iris
 ```
 Then tell Claude: "Make a mapcast video about <your topic>."
 
@@ -34,4 +35,4 @@ macOS or Linux (Windows through WSL). Node 20+, ffmpeg, Python 3.9 to 3.12 (setu
 tool for the drawings (ChatGPT works well). For the voice: an ElevenLabs account, or your own recording.
 
 ## Licence
-MIT. The demo drawings in assets/starter-art are for trying the skill; make your own art for your videos.
+MIT. The demo and showcase drawings in assets/starter-art are for trying the skill; make your own art for your videos.
